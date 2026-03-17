@@ -1,0 +1,9 @@
+[Unit]
+Description=FrogQuant Healthcheck
+After=network-online.target frogquant.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/frogquant
+ExecStart=/opt/frogquant/deploy/healthcheck.sh

@@ -1,0 +1,27 @@
+# FrogQuant server config (yaml-like key: value)
+# Copy to config/engine.yaml and adjust.
+
+symbol: BTCUSDT
+
+exchange.base_url: https://testnet.binancefuture.com
+execution.dry_run: true
+
+control.bind_ip: 127.0.0.1
+control.port: 8080
+
+risk.max_single_order_notional_usd: 10.0
+risk.max_position_ratio: 0.80
+risk.daily_loss_stop_ratio: 0.05
+
+grid.levels: 8
+grid.order_qty: 0.001
+grid.take_profit_ratio: 0.002
+grid.dynamic_enabled: true
+grid.recenter_threshold_ratio: 0.004
+grid.band_ratio: 0.06
+
+health.unhealthy_after_no_tick_sec: 15
+service.max_events_cache: 200
+service.max_orders_cache: 5000
+service.order_trim_batch: 1000
+runtime.run_seconds: 0

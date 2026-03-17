@@ -1,0 +1,8 @@
+build/
+cmake-build-*/
+.idea/
+.vscode/
+*.log
+*.jsonl
+
+qt_client/.qtcreator/*.user

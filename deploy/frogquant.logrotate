@@ -1,0 +1,8 @@
+/var/log/frogquant/market_logs.jsonl {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    copytruncate
+}

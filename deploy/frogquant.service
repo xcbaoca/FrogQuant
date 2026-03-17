@@ -1,0 +1,26 @@
+[Unit]
+Description=FrogQuant Trading Core Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/frogquant
+Environment=FQ_EXEC_DRY_RUN=true
+Environment=FQ_LOG_PATH=/var/log/frogquant/market_logs.jsonl
+# Optional: set in /etc/default/frogquant
+EnvironmentFile=-/etc/default/frogquant
+ExecStart=/opt/frogquant/bin/frogquant_market_app
+Restart=always
+RestartSec=2
+LimitNOFILE=65535
+
+# Hardening (safe defaults)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
